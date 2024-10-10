@@ -8,28 +8,29 @@ El servidor TCP desarrollado puede aceptar múltiples conexiones de clientes y p
 ## Estructura del Proyecto
 El proyecto está organizado de manera modular, con cada funcionalidad importante en su propio archivo:
 
-.
 
-├── **main.py               **Archivo principal que ejecuta el servidor**
+├── **main.py**               Archivo principal que ejecuta el servidor
 
-├── **servidor.py           **Clase Servidor, gestiona las conexiones TCP**
+├── **servidor.py**           Clase Servidor, gestiona las conexiones TCP
 
-├── **hilo_conexiones.py     **Clase HiloConexiones, gestiona los hilos de conexiones**
+├── **hilo_conexiones.py**     Clase HiloConexiones, gestiona los hilos de conexiones
 
-└── **hilo_comunicacion.py   **Clase HiloComunicacion, gestiona la comunicación cliente-servidor**
+└── **hilo_comunicacion.py**   Clase HiloComunicacion, gestiona la comunicación cliente-servidor
 
-### Requisitos
+└── **cliente.py**              Archivo principal que ejecuta el cliente
+
+## Requisitos
 
 **Python 3.x** (de preferencia la última versión estable)
 
-### Ejecución
+## Ejecución
 
-Ejecuta el archivo main.py para iniciar el servidor TCP
+Ejecuta el archivo **main.py** para iniciar el servidor TCP
 
 **python main.py**
 
 El servidor estará escuchando en localhost en el puerto 8080.
 
-### Conectar un cliente
+## Conectar un cliente
 
 Puedes conectar múltiples clientes para interactuar con el servidor en distintas ejecuciones de **cliente.py**
