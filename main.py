@@ -1,13 +1,19 @@
+import configparser
 from servidor import Servidor
 
 # Clase 1: Main - Ejecuta las clases de conexión y administración de hilos
 class Main:
     def __init__(self):
-        # Solicitar al usuario el host y puerto de manera dinámica
-        self.host = input("Introduce la dirección IP o 'localhost' para escuchar: ") or 'localhost'
-        self.port = int(input("Introduce el puerto (por defecto 8080): ") or 8080)
+        # Crear una instancia del lector de configuraciones
+        config = configparser.ConfigParser()
+        # Leer el archivo config.ini
+        config.read('config.ini')
 
-        # Crear una instancia del servidor con el host y puerto dinámico
+        # Asignar el host y el puerto desde el archivo de configuración
+        self.host = config['servidor']['host']
+        self.port = int(config['servidor']['port'])
+
+        # Crear una instancia del servidor con el host y puerto obtenidos del archivo
         self.servidor = Servidor(self.host, self.port)
 
     def run(self):

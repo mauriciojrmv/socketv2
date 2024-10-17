@@ -11,6 +11,8 @@ class Servidor:
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # Lista para almacenar todas las conexiones activas
         self.conexiones = []
+        # Conjunto para almacenar las sesiones activas (IPs de los clientes conectados)
+        self.sesiones_activas = set()
 
     def iniciar_servidor(self):
         # Vincula el socket a la dirección y puerto
